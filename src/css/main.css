@@ -1,0 +1,31 @@
+body {
+    background-color: #565353d3; /* Color de fondo más claro */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra en vertical */
+  }
+  
+  .wrapper {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #b8b8b8;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #b8b8b8;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+  }
+  
