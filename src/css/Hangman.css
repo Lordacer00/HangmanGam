@@ -1,0 +1,54 @@
+/* Estilos para el contenedor principal */
+.hangman-container {
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para el reloj */
+.clock {
+    background-color: #f0f0f0; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Radio de borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Alineación del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: black;
+}
+
+/* Estilos para la categoría */
+.hangman-category {
+    font-weight: bold; /* Negrita */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilos para la palabra a adivinar */
+.hangman-word {
+    font-size: 24px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilos para el input de letras */
+#InputLetters {
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón de reiniciar */
+.hangman-restart-button {
+    background-color: #806e28; /* Color de fondo */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Radio de borde */
+    cursor: pointer; /* Cursor al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-left: 10px;
+}
+
+/* Estilos para los mensajes de errores y victoria */
+.hangman-message {
+    font-weight: bold; /* Negrita */
+    margin-top: 20px; /* Espaciado superior */
+}

@@ -1,5 +1,5 @@
 import { useState , useEffect} from "react";
-
+import '../css/Hangman.css';
 // Interfaz que especifica las propiedades esperadas por el componente Hangman
 interface HangmanProps {
     food: string[]; // Array de palabras para adivinar
@@ -19,8 +19,10 @@ const Hangman = ({ food, computers, mexicanFood }: HangmanProps) => {
     const [inputDisabled, setInputDisabled] = useState(false);
     // Estado para la categoría seleccionada
     const [selectedCategory, setSelectedCategory] = useState("");
+    // Estado para la palabra secreta 
+    const [SecretWord, SetSecretWord] = useState("");
 
-    const [lostWord, setLostWord] = useState("");
+    const [count, setCount] = useState(0)
 
 
     // Función para seleccionar una categoría aleatoria
@@ -55,10 +57,20 @@ const Hangman = ({ food, computers, mexicanFood }: HangmanProps) => {
 
     useEffect(() => {
         if (errorCount >= 6) {
-            setLostWord(selectedWord); // Muestra la palabra perdida
+            SetSecretWord(selectedWord); // Muestra la palabra secreta
             setInputDisabled(true); // Deshabilita el input
         }
     }, [errorCount, selectedWord]);
+
+    useEffect(()=>{
+        const key = setInterval(()=>{
+          setCount(count=>count+1)
+        },1000);
+  
+      return()=>{
+        clearInterval(key);
+      };
+    },[])
 
     // Función para reiniciar el juego
 const restartGame = () => {
@@ -85,15 +97,20 @@ const restartGame = () => {
     // Reinicia las letras adivinadas y el contador de errores
     setGuessedLetters([]);
     setErrorCount(0);
-    setLostWord(""); // Reinicia la palabra perdida
+    SetSecretWord(""); // Reinicia la palabra secreta
+    setCount(0); // Reinicia el tiempo transcurrido
+
 };
 
 
     // Renderización del componente
     return (
-        <div>
-            <p>{selectedCategory && `Categoría: ${selectedCategory}`}</p> {/* Muestra la categoría seleccionada */}
-            <p>{displayWord.join('')}</p> {/* Muestra la palabra a adivinar */}
+        <div className="hangman-container">
+            <div className="clock">
+                Tiempo transcurrido: {count} segundos
+            </div>
+            <p className="hangman-category">{selectedCategory && `Categoría: ${selectedCategory}`}</p> {/* Muestra la categoría seleccionada */}
+            <p className="hangman-word">{displayWord.join('')}</p> {/* Muestra la palabra a adivinar */}
             <input
                 id="InputLetters"
                 maxLength={1}
@@ -101,15 +118,15 @@ const restartGame = () => {
                 disabled={errorCount > 5 || inputDisabled} // Deshabilita el input si hay más de 5 errores o si inputDisabled es verdadero
             />
             {(displayWord.join('') === selectedWord || errorCount > 5) && (
-                <button onClick={() => {
+                <button className="hangman-restart-button" onClick={() => {
                     restartGame();
                 }}>Seleccionar nueva palabra</button>
             )}
             <p>Cantidad de errores: {errorCount}</p> {/* Muestra la cantidad de errores */}
             {displayWord.join('') === selectedWord && (
-                <p>Ganaste esta ronda</p> // Muestra un mensaje de victoria si se adivina la palabra
+                <p className="hangman-message">Ganaste esta ronda</p> // Muestra un mensaje de victoria si se adivina la palabra
             )}
-                        {lostWord && <p>La palabra era: {lostWord}</p>}
+                        {SecretWord && <p className="hangman-message">La palabra era: {SecretWord}</p>}
         </div>
     );
 }
