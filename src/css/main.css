@@ -1,31 +1,63 @@
 body {
-    background-color: #565353d3; /* Color de fondo más claro */
-    margin: 0; /* Elimina el margen predeterminado del cuerpo */
-    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Centra en vertical */
+  background-color: #131313; /* Fondo oscuro */
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centra en vertical */
+  transition: background-color 0.5s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+.wrapper {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards; /* Animación para hacer aparecer el contenido */
+  border: 3px solid #f7d33e; /* Borde grueso y colorido */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #1f1f1f; /* Fondo del contenedor */
+}
+
+h1 {
+  font-size: 36px;
+  color: #f7d33e; /* Amarillo vibrante */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.5s; /* Animación para hacer aparecer el título */
+}
+
+h2 {
+  font-size: 24px;
+  color: #f7d33e; /* Amarillo vibrante */
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1s; /* Animación para hacer aparecer el subtítulo */
+}
+
+img {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+  opacity: 0;
+  animation: slideIn 1s ease forwards 1.5s; /* Animación para hacer deslizar la imagen desde abajo */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  .wrapper {
-    text-align: center;
+  to {
+      opacity: 1;
   }
-  
-  h1 {
-    font-size: 36px;
-    color: #b8b8b8;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(100px);
+      opacity: 0;
   }
-  
-  h2 {
-    font-size: 24px;
-    color: #b8b8b8;
-    margin-bottom: 20px;
+  to {
+      transform: translateY(0);
+      opacity: 1;
   }
-  
-  img {
-    width: 200px;
-    height: auto;
-    margin-top: 20px;
-  }
-  
+}
