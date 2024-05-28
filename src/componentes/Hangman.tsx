@@ -33,7 +33,7 @@ const Hangman = ({ food, computers, mexicanFood }: HangmanProps) => {
     };
 
     // Calcula la palabra a mostrar en pantalla, sustituyendo las letras no adivinadas por guiones
-    const displayWord = selectedWord.split('').map((letter, index) => {
+    const displayWord = selectedWord.split('').map((letter) => {
         if (guessedLetters.includes(letter)) {
             return letter; // Si la letra ya fue adivinada, se muestra
         } else {
