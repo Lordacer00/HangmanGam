@@ -4,41 +4,51 @@
     max-width: 600px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centrar horizontalmente */
     padding: 20px; /* Espaciado interno */
+    border: 3px solid #f7d33e; /* Borde grueso y colorido */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #1f1f1f; /* Fondo del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 /* Estilos para el reloj */
 .clock {
-    background-color: #f0f0f0; /* Color de fondo */
+    background-color: #131313; /* Fondo oscuro */
     padding: 10px; /* Espaciado interno */
     border-radius: 5px; /* Radio de borde */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
     text-align: center; /* Alineación del texto */
     margin-bottom: 20px; /* Espaciado inferior */
-    color: black;
+    color: #f7d33e; /* Amarillo vibrante */
 }
 
 /* Estilos para la categoría */
 .hangman-category {
     font-weight: bold; /* Negrita */
     margin-bottom: 10px; /* Espaciado inferior */
+    color: #f7d33e; /* Amarillo vibrante */
 }
 
 /* Estilos para la palabra a adivinar */
 .hangman-word {
     font-size: 24px; /* Tamaño de fuente */
     margin-bottom: 20px; /* Espaciado inferior */
+    color: #f7d33e; /* Amarillo vibrante */
 }
 
 /* Estilos para el input de letras */
 #InputLetters {
     padding: 5px 10px; /* Espaciado interno */
     font-size: 16px; /* Tamaño de fuente */
+    background-color: #131313; /* Fondo oscuro */
+    color: #f7d33e; /* Amarillo vibrante */
+    border: 2px solid #f7d33e; /* Borde colorido */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 /* Estilos para el botón de reiniciar */
 .hangman-restart-button {
-    background-color: #806e28; /* Color de fondo */
-    color: white; /* Color de texto */
+    background-color: #f7d33e; /* Color de fondo amarillo */
+    color: #131313; /* Color de texto oscuro */
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin borde */
     border-radius: 5px; /* Radio de borde */
@@ -51,4 +61,5 @@
 .hangman-message {
     font-weight: bold; /* Negrita */
     margin-top: 20px; /* Espaciado superior */
+    color: #f7d33e; /* Amarillo vibrante */
 }
